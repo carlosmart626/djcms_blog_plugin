@@ -2,7 +2,7 @@ Django>=5.2,<6.0
 django-cms>=5.1,<5.2
 # django-cms 5.1 imports `packaging` at runtime but does not declare it
 packaging
-djcms_blog>=0.2.4
+djcms_blog>=0.3.0
 pytest
 pytest-django
 pytest-cov
