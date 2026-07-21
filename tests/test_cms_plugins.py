@@ -60,7 +60,7 @@ class SimpleBlogEntriesPluginTestCase(TestCase):
             language="en",
             description="My post description",
             body="My post body",
-            publisher_is_draft=False,
+            is_draft=False,
             published=True
         )
         self.post_2 = Post.objects.create(
@@ -75,7 +75,7 @@ class SimpleBlogEntriesPluginTestCase(TestCase):
             language="en",
             description="My post 2 description",
             body="My post 2 body",
-            publisher_is_draft=False,
+            is_draft=False,
             published=True
         )
 
