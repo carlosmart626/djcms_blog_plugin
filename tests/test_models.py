@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.test import TestCase
 
 from djcms_blog_plugin.models import SimpleBlogEntriesPlugin
