@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from cms.api import add_plugin
 from cms.models import Placeholder
 from cms.plugin_rendering import ContentRenderer
@@ -20,7 +19,7 @@ class SimpleBlogEntriesPluginTestCase(TestCase):
         self.author = Author.objects.create(
             user=self.user,
             cover="author-cover.jpg",
-            image="author-image.jpg",
+            profile_image="author-image.jpg",
             slug="carlosmart",
             location="Colombia",
             website="https://carlosmart.co",
@@ -61,7 +60,7 @@ class SimpleBlogEntriesPluginTestCase(TestCase):
             language="en",
             description="My post description",
             body="My post body",
-            publisher_is_draft=False,
+            is_draft=False,
             published=True
         )
         self.post_2 = Post.objects.create(
@@ -76,7 +75,7 @@ class SimpleBlogEntriesPluginTestCase(TestCase):
             language="en",
             description="My post 2 description",
             body="My post 2 body",
-            publisher_is_draft=False,
+            is_draft=False,
             published=True
         )
 

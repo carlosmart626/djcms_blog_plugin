@@ -2,7 +2,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.conf import settings
 from django.utils import translation
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from djcms_blog.models import Blog
 
 from .forms import SimpleBlogEntriesPluginForm
@@ -20,7 +20,7 @@ class SimpleBlogEntriesPluginCMS(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         self.language = translation.get_language()
-        context = super(SimpleBlogEntriesPluginCMS, self).render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
         blog = Blog.objects.get(pk=settings.DJCMS_BLOG_ID)
         blog_lang_object = blog.get_language_object(self.language)
         instance.get_posts = list(blog.get_posts())[:settings.DJCMS_BLOG_ENTRIES_NUMBER]

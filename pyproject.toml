@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "djcms_blog_plugin"
+description = "DjangoCMS Blog plugin"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Carlos Martinez", email = "me@carlosmart.co" }]
+keywords = ["djcms_blog_plugin", "django-cms", "blog", "plugin"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [
+    "Django>=5.2",
+    "django-cms>=5.1",
+    "djcms_blog>=0.3.0",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/carlosmart626/djcms_blog_plugin"
+Source = "https://github.com/carlosmart626/djcms_blog_plugin"
+
+[tool.setuptools.dynamic]
+version = { attr = "djcms_blog_plugin.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["djcms_blog_plugin*"]
+
+[tool.setuptools.package-data]
+djcms_blog_plugin = ["templates/**/*.html"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
